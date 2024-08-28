@@ -1,4 +1,4 @@
-ame: deploy Voll Med
+name: deploy Voll Med
 
 on:
   push:
