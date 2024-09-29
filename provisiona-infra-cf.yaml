@@ -34,6 +34,7 @@ Resources:
             
             # Permissões de sudo para docker
             echo 'ec2-user ALL=(ALL) NOPASSWD: /usr/bin/docker' | sudo tee /etc/sudoers.d/docker
+        #dá para adicionar um passo para pegar o ip publico da instância e criar um dns no route 53
 
   SecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
