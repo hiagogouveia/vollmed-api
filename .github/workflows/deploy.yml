@@ -29,6 +29,9 @@ jobs:
           docker-compose build
           docker-compose up -d
 
+      - name: Verifica a imagem Docker
+        run: docker images
+
       - name: deploy para ec2
         env:
           PRIVATE_KEY: ${{ secrets.EC2_PRIVATE_KEY }}
