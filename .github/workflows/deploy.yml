@@ -19,8 +19,8 @@ jobs:
 
       - name: Configura Docker Compose
         run: |
-          sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/02docker-compose-nonprod.yaml
-          sudo chmod +x /usr/local/bin/02docker-compose-nonprod.yaml
+          sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose.yaml
+          sudo chmod +x /usr/local/bin/docker-compose.yaml
           sudo chmod +x ./mvnw
           docker-compose --version
          
@@ -44,7 +44,7 @@ jobs:
           ls -l
           
           scp -o StrictHostKeyChecking=no -i deploy_key.pem vollmed-api.tar $USER@$HOST:/home/ec2-user/
-          scp -o StrictHostKeyChecking=no -i deploy_key.pem ./01docker-compose-prod.yaml $USER@$HOST:/home/ec2-user/
+          scp -o StrictHostKeyChecking=no -i deploy_key.pem ./docker-compose-prod.yaml $USER@$HOST:/home/ec2-user/
           scp -o StrictHostKeyChecking=no -i deploy_key.pem init.sql $USER@$HOST:/home/ec2-user/
           scp -o StrictHostKeyChecking=no -i deploy_key.pem script_deploy.sh $USER@$HOST:/home/ec2-user/ 
       
