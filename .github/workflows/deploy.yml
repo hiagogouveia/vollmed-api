@@ -36,12 +36,11 @@ jobs:
         env:
           PRIVATE_KEY: ${{ secrets.EC2_PRIVATE_KEY }}
           USER: ec2-user
-          HOST: 52.90.41.128
+          HOST: 3.86.193.90
         run: |
           echo "$PRIVATE_KEY" > deploy_key.pem
           chmod 600 deploy_key.pem
-
-          docker save -o vollmed-api.tar vollmed-api_api
+          ls -l
 
           scp -o StrictHostKeyChecking=no -i deploy_key.pem vollmed-api.tar $USER@$HOST:/home/ec2-user/
           scp -o StrictHostKeyChecking=no -i deploy_key.pem init.sql $USER@$HOST:/home/ec2-user/
