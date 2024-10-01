@@ -4,6 +4,7 @@ docker load -i vollmed-api.tar
 
 mv docker-compose-prod.yaml docker-compose.yaml
 
+
 container_ids=$(docker ps -q)
 
 if [ -z "$conteiner_ids" ]; then
