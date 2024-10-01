@@ -47,6 +47,7 @@ jobs:
           scp -o StrictHostKeyChecking=no -i deploy_key.pem vollmed-api.tar $USER@$HOST:/home/ec2-user/
           scp -o StrictHostKeyChecking=no -i deploy_key.pem init.sql $USER@$HOST:/home/ec2-user/
           scp -o StrictHostKeyChecking=no -i deploy_key.pem docker-compose-prod.yaml $USER@$HOST:/home/ec2-user/
+          ssh -i deploy_key.pem $USER@$HOST "ll -l"
           scp -o StrictHostKeyChecking=no -i deploy_key.pem script_deploy.sh $USER@$HOST:/home/ec2-user/ 
       
           ssh -i deploy_key.pem $USER@$HOST "chmod +x script_deploy.sh && ./script_deploy.sh"
