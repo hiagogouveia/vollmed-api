@@ -17,4 +17,4 @@ else
   echo "Todos os containers em execução foram parados."
 fi
 
-docker compose up -d
+docker-compose up -d
