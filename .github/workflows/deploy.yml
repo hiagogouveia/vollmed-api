@@ -36,7 +36,7 @@ jobs:
         env:
           PRIVATE_KEY: ${{ secrets.EC2_PRIVATE_KEY }}
           USER: ec2-user
-          HOST: 18.207.187.186
+          HOST: 52.91.155.17
         run: |
           echo "$PRIVATE_KEY" > deploy_key.pem
           chmod 600 deploy_key.pem
